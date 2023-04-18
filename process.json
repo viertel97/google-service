@@ -3,8 +3,8 @@
         {
             "name": "google-service",
             "script": "main.py",
-            "cwd": "/home/pi/code/Google-Service",
-            "interpreter": "/home/pi/code/Google-Service/venv/bin/python",
+            "cwd": "/home/pi/code/google-service",
+            "interpreter": "/home/pi/code/google-service/venv/bin/python",
             "instances": 1,
             "exec_mode": "fork",
             "log_date_format": "YYYY-MM-DD HH:mm Z",
