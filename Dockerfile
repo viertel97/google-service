@@ -1,5 +1,4 @@
-FROM arm64v8/python:3.9-alpine
-RUN apk add make automake gcc g++ python3-dev
+FROM arm64v8/python:3.9-buster
 RUN pip install --upgrade pip
 
 WORKDIR /app
