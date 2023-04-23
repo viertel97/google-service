@@ -1,6 +1,6 @@
 FROM arm64v8/python:3.9-alpine
-RUN apk add python3-pandas
-RUN apk add python3-numpy
+RUN apk add --update py3-pandas
+RUN apk add --update py3-numpy
 RUN pip install --upgrade pip
 
 WORKDIR /app
