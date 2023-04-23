@@ -1,6 +1,5 @@
 FROM arm64v8/python:3.9-alpine
-RUN apk update
-RUN apk add make automake gcc g++ subversion python3-dev
+RUN apk add make automake gcc g++ python3-dev
 RUN pip install --upgrade pip
 
 WORKDIR /app
