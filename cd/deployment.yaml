@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.28.0 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: google-service
+  name: google-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: google-service
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.28.0 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/kubernetes-default: "true"
+        io.kompose.service: google-service
+    spec:
+      containers:
+        - env:
+            - name: access_id
+              valueFrom:
+                configMapKeyRef:
+                  key: access_id
+                  name: cred-env
+            - name: access_key
+              valueFrom:
+                configMapKeyRef:
+                  key: access_key
+                  name: cred-env
+          image: ghcr.io/viertel97/google-service:main
+          name: google-service
+          ports:
+            - containerPort: 8100
+          resources: {}
+      restartPolicy: Always
+status: {}
