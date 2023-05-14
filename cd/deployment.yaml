@@ -28,14 +28,14 @@ spec:
         - env:
             - name: access_id
               valueFrom:
-                configMapKeyRef:
+                secretKeyRef:
                   key: access_id
-                  name: cred-env
+                  name: akeyless-cred
             - name: access_key
               valueFrom:
-                configMapKeyRef:
+                secretKeyRef:
                   key: access_key
-                  name: cred-env
+                  name: akeyless-cred
           image: ghcr.io/viertel97/google-service:main
           name: google-service
           ports:
