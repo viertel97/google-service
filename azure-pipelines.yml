@@ -18,6 +18,6 @@ stages:
     steps:
     - script: |
         docker build -t ghcr.io/viertel97/google-service:latest .
-        echo "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" | docker login ghcr.io -u "$viertel97" --password-stdin
+        echo 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 | docker login ghcr.io -u viertel97 --password-stdin
         docker push ghcr.io/viertel97/google-service:latest
       displayName: 'Build and Push Docker Image'
