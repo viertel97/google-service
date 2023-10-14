@@ -9,13 +9,15 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-jobs:
-- job: BuildAndPushDockerImage
-  steps:
-  - script: |
-      docker build -t ghcr.io/viertel97/google-service:latest .
-      docker login ghcr.io -u username -p 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
-      docker push ghcr.io/viertel97/google-service:latest
-    displayName: 'Build and Push Docker Image'
-  env:
-    PAT: $(GHCR_PAT)
+
+stages:
+- stage: Docker 
+  displayName: Build and Push Docker Image
+  jobs:
+  - job: BuildAndPushDockerImage
+    steps:
+    - script: |
+        docker build -t ghcr.io/viertel97/google-service:latest .
+        docker login ghcr.io -u username -p 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
+        docker push ghcr.io/viertel97/google-service:latest
+      displayName: 'Build and Push Docker Image'
