@@ -11,11 +11,6 @@ pool:
 
 
 steps:
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.x'
-    addToPath: true
-
 - task: Docker@2
   inputs:
     containerRegistry: 'Test'  # The name of your Azure Container Registry
