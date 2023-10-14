@@ -1,0 +1,21 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+jobs:
+- job: BuildAndPushDockerImage
+  steps:
+  - script: |
+      docker build -t ghcr.io/viertel97/google-service:latest .
+      docker login ghcr.io -u username -p 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
+      docker push ghcr.io/viertel97/google-service:latest
+    displayName: 'Build and Push Docker Image'
+  env:
+    PAT: $(GHCR_PAT)
