@@ -9,6 +9,7 @@ trigger:
 pool:
   name: Raspi
 
+name: $(Date:yyyyMMdd)-$(Build.BuildId)
 
 steps:
 - task: Docker@2
@@ -17,3 +18,4 @@ steps:
     repository: 'google-service'  # The name of the repository
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    tags: latest,$(Build.BuildNumber)
