@@ -13,13 +13,7 @@ pool:
 steps:
 - task: Docker@2
   inputs:
-    containerRegistry: 'Test'
-    command: 'login'
-
-- task: Docker@2
-  inputs:
     containerRegistry: 'Test'  # The name of your Azure Container Registry
     repository: 'google-service'  # The name of the repository
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    
