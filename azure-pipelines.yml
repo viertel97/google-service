@@ -22,4 +22,4 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'docker rmi ghcr.io/viertel97/google-service:latest''
+    script: 'docker rmi ghcr.io/viertel97/google-service:latest'
