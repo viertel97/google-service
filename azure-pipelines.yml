@@ -19,3 +19,7 @@ steps:
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
     tags: latest,$(Build.BuildNumber)
+
+- task: CmdLine@2
+  inputs:
+    script: 'docker rmi ghcr.io/viertel97/google-service:latest''
