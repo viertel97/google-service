@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  name: Raspi
+  vmImage: ubuntu-latest
 
 name: $(Date:yyyyMMdd)-$(Build.BuildId)
 
