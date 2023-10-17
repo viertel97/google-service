@@ -43,4 +43,6 @@ spec:
             - containerPort: 8100
           resources: {}
       restartPolicy: Always
+      imagePullSecrets:
+        - name: ghcr-secret
 status: {}
